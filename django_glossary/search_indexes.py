@@ -15,9 +15,6 @@ class TermIndex(indexes.SearchIndex, indexes.Indexable):
     def index_queryset(self, using=None):
         return self.get_model().objects.all()
 
-    def get_search_data(self, obj):
-        return obj.specs
-
     def get_title(self, obj):
         return obj.title
 
