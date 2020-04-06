@@ -21,7 +21,7 @@ class Term(models.Model):
 
 class Synonym(models.Model):
     title = models.CharField(max_length=250)
-    term  = models.ForeignKey(Term, related_name="synonyms")
+    term  = models.ForeignKey(Term, related_name="synonyms", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.title} (synonym for {self.term.title})"
